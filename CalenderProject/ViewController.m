@@ -15,6 +15,8 @@
 
 @implementation ViewController
 
+@synthesize monthlabel;
+
 int m=0;
 int chosenday=0;
 NSArray *monthnames;
@@ -50,7 +52,8 @@ NSInteger months[12][42] = {
 -(void)viewDidAppear:(BOOL)animated
 {
     monthnames = [NSArray arrayWithObjects:@"January",@"February",@"March",@"April",@"May",@"June",@"July",@"August",@"September",@"October",@"November",@"December",nil];
-    _monthlabel.text = [monthnames objectAtIndex:m];
+    
+    monthlabel.text = [monthnames objectAtIndex:m];
     
     buttons = [NSArray arrayWithObjects:_b0,_b1,_b2,_b3,_b4,_b5,_b6,_b7,_b8,_b9,_b10,_b11,_b12,_b13,_b14,_b15,_b16,_b17,_b18,_b19,_b20,_b21,_b22,_b23,_b24,_b25,_b26,_b27,_b28,_b29,_b30,_b31,_b32,_b33,_b34,_b35,_b36,_b37,_b38,_b39,_b40,_b41, nil];
     
@@ -60,7 +63,7 @@ NSInteger months[12][42] = {
 
 -(void)updateMonth
 {
-    _monthlabel.text = [monthnames objectAtIndex:m];
+    monthlabel.text = [monthnames objectAtIndex:m];
     
     for (NSInteger i=0; i<42; i++) {
         [buttons[i] setTitle:[NSString stringWithFormat:@"%d",months[m][i]] forState:UIControlStateNormal];
@@ -78,7 +81,7 @@ NSInteger months[12][42] = {
 {
     m++;
     if (m>11) {
-        m=11;
+        m=0;
     }
     [self updateMonth];
 }
@@ -87,7 +90,7 @@ NSInteger months[12][42] = {
 {
     m--;
     if (m<0) {
-        m=0;
+        m=11;
     }
     [self updateMonth];
 }

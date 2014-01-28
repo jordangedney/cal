@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B50C97351891D8EC005BD2ED /* AddEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50C97341891D8EC005BD2ED /* AddEventViewController.m */; };
 		B54F138A1888BF89008B4497 /* DayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B54F13891888BF89008B4497 /* DayViewController.m */; };
 		B5F9962018879B00003F2E50 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F9961F18879B00003F2E50 /* Foundation.framework */; };
 		B5F9962218879B00003F2E50 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F9962118879B00003F2E50 /* CoreGraphics.framework */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B50C97331891D8EC005BD2ED /* AddEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEventViewController.h; sourceTree = "<group>"; };
+		B50C97341891D8EC005BD2ED /* AddEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEventViewController.m; sourceTree = "<group>"; };
 		B54F13881888BF89008B4497 /* DayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayViewController.h; sourceTree = "<group>"; };
 		B54F13891888BF89008B4497 /* DayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayViewController.m; sourceTree = "<group>"; };
 		B5F9961C18879B00003F2E50 /* CalenderProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalenderProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +127,8 @@
 				B5F9962618879B00003F2E50 /* Supporting Files */,
 				B54F13881888BF89008B4497 /* DayViewController.h */,
 				B54F13891888BF89008B4497 /* DayViewController.m */,
+				B50C97331891D8EC005BD2ED /* AddEventViewController.h */,
+				B50C97341891D8EC005BD2ED /* AddEventViewController.m */,
 			);
 			path = CalenderProject;
 			sourceTree = "<group>";
@@ -256,6 +261,7 @@
 			files = (
 				B5F9963618879B00003F2E50 /* ViewController.m in Sources */,
 				B5F9963018879B00003F2E50 /* AppDelegate.m in Sources */,
+				B50C97351891D8EC005BD2ED /* AddEventViewController.m in Sources */,
 				B5F9962C18879B00003F2E50 /* main.m in Sources */,
 				B54F138A1888BF89008B4497 /* DayViewController.m in Sources */,
 			);

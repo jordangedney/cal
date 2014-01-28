@@ -12,7 +12,6 @@
 
 @property (strong,nonatomic) NSString *month;
 @property (nonatomic) int day;
-@property (strong, nonatomic) IBOutlet UILabel *monthlabel;
-@property (strong, nonatomic) IBOutlet UILabel *daylabel;
+@property (strong, nonatomic) IBOutlet UILabel *datelabel;
 
 @end

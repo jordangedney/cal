@@ -7,17 +7,24 @@
 //
 
 #import "DayViewController.h"
+#import "AddEventViewController.h"
 
 @implementation DayViewController
 
-//@synthesize month,day;
+@synthesize datelabel, month, day;
 
 - (void)viewDidLoad
 {
-    _monthlabel.text = _month;
-    _daylabel.text = [NSString stringWithFormat:@"%d",_day];
+   datelabel.text = [NSString stringWithFormat:@"%@ %d",month,day];
 }
 
-
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"prepareAddEventView"]){
+        
+        AddEventViewController *controller = (AddEventViewController *)segue.destinationViewController;
+        controller.month = month;
+        controller.day = day;
+    }
+}
 
 @end
