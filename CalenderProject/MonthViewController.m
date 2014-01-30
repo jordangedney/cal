@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 Ben Frisbie. All rights reserved.
 //
 
-#import "ViewController.h"
-#import "DayViewController.h"
+#import "MonthViewController.h"
+#import "DayTVC.h"
 
-@interface ViewController ()
+@interface MonthViewController ()
 
 @end
 
-@implementation ViewController
+@implementation MonthViewController
 
 @synthesize monthlabel;
 
@@ -38,7 +38,7 @@ NSInteger months[12][42] = {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	
     UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipedLeft)];
     [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
     [self.view addGestureRecognizer:swipeLeft];
@@ -97,16 +97,14 @@ NSInteger months[12][42] = {
 
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if([segue.identifier isEqualToString:@"prepareDayView"]){
         for (NSInteger i=0; i<42; i++) {
             if (((UIButton*)buttons[i]).isTouchInside == YES) {
                 chosenday = ((UIButton*)buttons[i]).tag;
             }
         }
-        DayViewController *controller = (DayViewController *)segue.destinationViewController;
+        DayTVC *controller = (DayTVC *)segue.destinationViewController;
         controller.month = monthnames[m];
         controller.day = chosenday;
-    }
 }
 
 

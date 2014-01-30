@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface MonthViewController : UIViewController
+
 @property (strong, nonatomic) IBOutlet UILabel *monthlabel;
+
 @property (strong, nonatomic) IBOutlet UIButton *b0;
 @property (strong, nonatomic) IBOutlet UIButton *b1;
 @property (strong, nonatomic) IBOutlet UIButton *b2;

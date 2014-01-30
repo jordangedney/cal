@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B50C97351891D8EC005BD2ED /* AddEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50C97341891D8EC005BD2ED /* AddEventViewController.m */; };
-		B54F138A1888BF89008B4497 /* DayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B54F13891888BF89008B4497 /* DayViewController.m */; };
+		B5140F1F1898C6C800B472AF /* DayTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5140F1E1898C6C800B472AF /* DayTVC.m */; };
+		B5140F221898CC0C00B472AF /* AddEventTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5140F211898CC0C00B472AF /* AddEventTVC.m */; };
+		B557DE0B1899B8270080A1B4 /* data.txt in Resources */ = {isa = PBXBuildFile; fileRef = B557DE0A1899B8270080A1B4 /* data.txt */; };
+		B557DE0E1899FABC0080A1B4 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = B557DE0D1899FABC0080A1B4 /* Event.m */; };
 		B5F9962018879B00003F2E50 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F9961F18879B00003F2E50 /* Foundation.framework */; };
 		B5F9962218879B00003F2E50 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F9962118879B00003F2E50 /* CoreGraphics.framework */; };
 		B5F9962418879B00003F2E50 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F9962318879B00003F2E50 /* UIKit.framework */; };
@@ -16,7 +18,7 @@
 		B5F9962C18879B00003F2E50 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F9962B18879B00003F2E50 /* main.m */; };
 		B5F9963018879B00003F2E50 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F9962F18879B00003F2E50 /* AppDelegate.m */; };
 		B5F9963318879B00003F2E50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5F9963118879B00003F2E50 /* Main.storyboard */; };
-		B5F9963618879B00003F2E50 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F9963518879B00003F2E50 /* ViewController.m */; };
+		B5F9963618879B00003F2E50 /* MonthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F9963518879B00003F2E50 /* MonthViewController.m */; };
 		B5F9963818879B00003F2E50 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5F9963718879B00003F2E50 /* Images.xcassets */; };
 		B5F9963F18879B00003F2E50 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F9963E18879B00003F2E50 /* XCTest.framework */; };
 		B5F9964018879B00003F2E50 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F9961F18879B00003F2E50 /* Foundation.framework */; };
@@ -36,10 +38,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B50C97331891D8EC005BD2ED /* AddEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEventViewController.h; sourceTree = "<group>"; };
-		B50C97341891D8EC005BD2ED /* AddEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEventViewController.m; sourceTree = "<group>"; };
-		B54F13881888BF89008B4497 /* DayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayViewController.h; sourceTree = "<group>"; };
-		B54F13891888BF89008B4497 /* DayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayViewController.m; sourceTree = "<group>"; };
+		B5140F1D1898C6C800B472AF /* DayTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayTVC.h; sourceTree = "<group>"; };
+		B5140F1E1898C6C800B472AF /* DayTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayTVC.m; sourceTree = "<group>"; };
+		B5140F201898CC0C00B472AF /* AddEventTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEventTVC.h; sourceTree = "<group>"; };
+		B5140F211898CC0C00B472AF /* AddEventTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEventTVC.m; sourceTree = "<group>"; };
+		B557DE0A1899B8270080A1B4 /* data.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = data.txt; sourceTree = "<group>"; };
+		B557DE0C1899FABC0080A1B4 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		B557DE0D1899FABC0080A1B4 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		B5F9961C18879B00003F2E50 /* CalenderProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalenderProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F9961F18879B00003F2E50 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B5F9962118879B00003F2E50 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -51,8 +56,8 @@
 		B5F9962E18879B00003F2E50 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B5F9962F18879B00003F2E50 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B5F9963218879B00003F2E50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B5F9963418879B00003F2E50 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B5F9963518879B00003F2E50 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B5F9963418879B00003F2E50 /* MonthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonthViewController.h; sourceTree = "<group>"; };
+		B5F9963518879B00003F2E50 /* MonthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MonthViewController.m; sourceTree = "<group>"; };
 		B5F9963718879B00003F2E50 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B5F9963D18879B00003F2E50 /* CalenderProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalenderProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F9963E18879B00003F2E50 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -118,17 +123,20 @@
 		B5F9962518879B00003F2E50 /* CalenderProject */ = {
 			isa = PBXGroup;
 			children = (
+				B557DE0A1899B8270080A1B4 /* data.txt */,
 				B5F9962E18879B00003F2E50 /* AppDelegate.h */,
 				B5F9962F18879B00003F2E50 /* AppDelegate.m */,
 				B5F9963118879B00003F2E50 /* Main.storyboard */,
-				B5F9963418879B00003F2E50 /* ViewController.h */,
-				B5F9963518879B00003F2E50 /* ViewController.m */,
+				B5F9963418879B00003F2E50 /* MonthViewController.h */,
+				B5F9963518879B00003F2E50 /* MonthViewController.m */,
 				B5F9963718879B00003F2E50 /* Images.xcassets */,
 				B5F9962618879B00003F2E50 /* Supporting Files */,
-				B54F13881888BF89008B4497 /* DayViewController.h */,
-				B54F13891888BF89008B4497 /* DayViewController.m */,
-				B50C97331891D8EC005BD2ED /* AddEventViewController.h */,
-				B50C97341891D8EC005BD2ED /* AddEventViewController.m */,
+				B5140F1D1898C6C800B472AF /* DayTVC.h */,
+				B5140F1E1898C6C800B472AF /* DayTVC.m */,
+				B5140F201898CC0C00B472AF /* AddEventTVC.h */,
+				B5140F211898CC0C00B472AF /* AddEventTVC.m */,
+				B557DE0C1899FABC0080A1B4 /* Event.h */,
+				B557DE0D1899FABC0080A1B4 /* Event.m */,
 			);
 			path = CalenderProject;
 			sourceTree = "<group>";
@@ -238,6 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B557DE0B1899B8270080A1B4 /* data.txt in Resources */,
 				B5F9963818879B00003F2E50 /* Images.xcassets in Resources */,
 				B5F9962A18879B00003F2E50 /* InfoPlist.strings in Resources */,
 				B5F9963318879B00003F2E50 /* Main.storyboard in Resources */,
@@ -259,11 +268,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5F9963618879B00003F2E50 /* ViewController.m in Sources */,
+				B557DE0E1899FABC0080A1B4 /* Event.m in Sources */,
+				B5140F221898CC0C00B472AF /* AddEventTVC.m in Sources */,
+				B5140F1F1898C6C800B472AF /* DayTVC.m in Sources */,
+				B5F9963618879B00003F2E50 /* MonthViewController.m in Sources */,
 				B5F9963018879B00003F2E50 /* AppDelegate.m in Sources */,
-				B50C97351891D8EC005BD2ED /* AddEventViewController.m in Sources */,
 				B5F9962C18879B00003F2E50 /* main.m in Sources */,
-				B54F138A1888BF89008B4497 /* DayViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,7 +403,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CalenderProject/CalenderProject-Prefix.pch";
 				INFOPLIST_FILE = "CalenderProject/CalenderProject-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -406,7 +418,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CalenderProject/CalenderProject-Prefix.pch";
 				INFOPLIST_FILE = "CalenderProject/CalenderProject-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8BE96FF6-7555-4E80-83FE-4E9C14086745</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CalenderProject</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>08A16068-FE1E-4C80-8052-9AE65B54731E</key>
+		<string>https://github.com/jordangedney/cal.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CalenderProject.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>08A16068-FE1E-4C80-8052-9AE65B54731E</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/jordangedney/cal.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>08A16068-FE1E-4C80-8052-9AE65B54731E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>08A16068-FE1E-4C80-8052-9AE65B54731E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>cal</string>
+		</dict>
+	</array>
+</dict>
+</plist>
