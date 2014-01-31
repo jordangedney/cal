@@ -18,14 +18,12 @@
 
 @synthesize month, day;
 
-NSMutableArray *todaysEvents;
+NSMutableArray *todaysEvents; //Array of today's Events
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
+
     return self;
 }
 
@@ -36,22 +34,17 @@ NSMutableArray *todaysEvents;
     self.title = [NSString stringWithFormat:@"%@ %d",month,day];
     [self update];
     
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-
+/* Method to update the current days events from a text file */
 -(void)update
 {
-    NSString *content = [NSString stringWithContentsOfFile:[self getDataPath] encoding:NSUTF8StringEncoding error:nil];
+    NSString *content = [NSString stringWithContentsOfFile:[self getDataPath] encoding:NSUTF8StringEncoding error:nil];  //Put all data from text file into string
     todaysEvents = [self extractEvents:content];
 }
 
 
+/* Method to get the full path to the text file that is read and written to */
 -(NSString*)getDataPath
 {
     NSString* filePath = @"data";
@@ -60,7 +53,7 @@ NSMutableArray *todaysEvents;
 }
 
 
-
+/* Method to get todays events out of the string with all the years events */
 -(NSMutableArray*)extractEvents:(NSString*)content
 {
     NSMutableArray *all = [NSMutableArray arrayWithCapacity:1];
@@ -121,35 +114,32 @@ NSMutableArray *todaysEvents;
 }
 
 
-
+/* Method called before going onto the next view */
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"addEvent"]){
         
-        AddEventTVC *controller = (AddEventTVC *)segue.destinationViewController;
-        controller.month = month;
-        controller.day = day;
-        AddEventTVC *addEventTVC = segue.destinationViewController;
-        addEventTVC.delegate = self;
+        AddEventTVC *controller = (AddEventTVC *)segue.destinationViewController; //get the next view controller
+        controller.month = month; //set the next months view
+        controller.day = day; //set the next view day
+        controller.delegate = self; //allow the next view to get back to here
     }
 }
 
 
 - (void)theSaveButtonOnTheAddEventTVCWasTapped:(AddEventTVC *)controller
 {
-    // close the delegated view
-    [controller.navigationController popViewControllerAnimated:YES];
+    [controller.navigationController popViewControllerAnimated:YES]; // close the delegated view or the view that came back to this view
     [self update];
-    [self.tableView reloadData];
+    [self.tableView reloadData];  //reload the view table
 }
 
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -173,66 +163,62 @@ NSMutableArray *todaysEvents;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
-                                      reuseIdentifier:@"Events"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Events"];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"Time: %@     Title: %@     Location: %@",((Event*)todaysEvents[indexPath.row]).time,
-                        ((Event*)todaysEvents[indexPath.row]).title, ((Event*)todaysEvents[indexPath.row]).location];
+    cell.textLabel.text = [NSString stringWithFormat:@"Time: %@     Title: %@     Location: %@",((Event*)todaysEvents[indexPath.row]).time, ((Event*)todaysEvents[indexPath.row]).title, ((Event*)todaysEvents[indexPath.row]).location]; //set the table cell to the given events data
     
     return cell;
 }
 
 
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
+/* Method to allow deleting from the table */
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self.tableView beginUpdates]; // Avoid  NSInternalInconsistencyException
+        
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];  // Delete the row from the table
+        NSString *content = [NSString stringWithContentsOfFile:[self getDataPath] encoding:NSUTF8StringEncoding error:nil];  //get the text files contents
+        [self removeEvent:content :indexPath.row]; //remove event from the text file
+        [self update];
+        
+        [self.tableView endUpdates];
     }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+
+
+/* Method to delete an event from the text file */
+-(void)removeEvent:(NSString*)content :(NSInteger)eventnum
 {
+    NSString *remove = [NSString stringWithFormat:@"%@;%@;%@;%@",((Event*)todaysEvents[eventnum]).date, ((Event*)todaysEvents[eventnum]).time, ((Event*)todaysEvents[eventnum]).title, ((Event*)todaysEvents[eventnum]).location]; //get the string of the event that needs to be removed
+    
+    NSMutableArray *all = [NSMutableArray arrayWithCapacity:1];
+    NSScanner *scan = [NSScanner scannerWithString:content];
+    
+    while ([scan isAtEnd] == NO) {
+        NSString *readin;
+        NSCharacterSet* characters = [NSCharacterSet newlineCharacterSet];
+        [scan scanUpToCharactersFromSet:characters intoString:&readin];
+        
+        if ([readin isEqualToString:remove]==NO) {
+            [all addObject:[NSString stringWithFormat:@"%@\n",readin]];
+        }
+        
+    }
+    
+    if ([all count]>=1) {
+        [all[0] writeToFile:[self getDataPath] atomically:YES encoding:NSUTF8StringEncoding error:nil];
+        NSFileHandle *fileHandle = [NSFileHandle fileHandleForWritingAtPath:[self getDataPath]];
+    
+        for (int i=1; i<[all count]; i++) {
+            [fileHandle seekToEndOfFile];
+            [fileHandle writeData:[all[i] dataUsingEncoding:NSUTF8StringEncoding]];
+        }
+    
+    }
+
 }
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
- */
 
 @end

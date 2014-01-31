@@ -2,16 +2,15 @@
 //  ViewController.h
 //  CalenderProject
 //
-//  Created by Ben Frisbie on 1/15/14.
-//  Copyright (c) 2014 Ben Frisbie. All rights reserved.
-//
 
 #import <UIKit/UIKit.h>
 
 @interface MonthViewController : UIViewController
 
+//connection to the month label
 @property (strong, nonatomic) IBOutlet UILabel *monthlabel;
 
+//Connection to each day button
 @property (strong, nonatomic) IBOutlet UIButton *b0;
 @property (strong, nonatomic) IBOutlet UIButton *b1;
 @property (strong, nonatomic) IBOutlet UIButton *b2;
