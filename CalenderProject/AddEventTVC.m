@@ -42,7 +42,14 @@
     NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];  //used to format the time
     [outputFormatter setDateFormat:@"HH:mm"]; //24hr time format
     NSString *timeString = [outputFormatter stringFromDate:timepicker.date];  //formats the selected time in the datepicker object
-    NSString *eventData = [NSString stringWithFormat:@"%@%d;%@;%@;%@\n",month, day, timeString, titletext.text, locationtext.text]; //Saves event data into a string
+    NSString *eventData;
+    if (day == 1 || day == 2 || day == 3) {
+        eventData = [NSString stringWithFormat:@"%@0%d;%@;%@;%@\n",month, day, timeString, titletext.text, locationtext.text]; //Saves event data into a string
+    }
+    else{
+        eventData = [NSString stringWithFormat:@"%@%d;%@;%@;%@\n",month, day, timeString, titletext.text, locationtext.text]; //Saves event data into a string
+    }
+    NSLog(@"add: %@\n",eventData);
     NSFileHandle *fileHandle = [NSFileHandle fileHandleForWritingAtPath:[self getDataPath]];  //used to travel to a specific spot in a file
     [fileHandle seekToEndOfFile];  //travel to the end of the file
     [fileHandle writeData:[eventData dataUsingEncoding:NSUTF8StringEncoding]];  //write the event out to the text file

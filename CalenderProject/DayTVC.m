@@ -70,9 +70,19 @@ NSMutableArray *todaysEvents; //Array of today's Events
     
     for (int i=0; i<[all count]; i++) {
         scan = [NSScanner scannerWithString:[all objectAtIndex:i]];
-        if ([scan scanString:[NSString stringWithFormat:@"%@%d",month,day] intoString:Nil]) {
-            [today addObject:[all objectAtIndex:i]];
+        if (day == 1 || day == 2 || day == 3) {
+            if ([scan scanString:[NSString stringWithFormat:@"%@0%d",month,day] intoString:Nil]) {
+                [today addObject:[all objectAtIndex:i]];
+                NSLog([all objectAtIndex:i]);
+            }
         }
+        else{
+            if ([scan scanString:[NSString stringWithFormat:@"%@%d",month,day] intoString:Nil]) {
+                [today addObject:[all objectAtIndex:i]];
+                NSLog([all objectAtIndex:i]);
+            }
+        }
+        
     }
     
     NSMutableArray *events = [NSMutableArray arrayWithCapacity:1];
