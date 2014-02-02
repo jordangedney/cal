@@ -8,6 +8,7 @@
 
 #import "DayTVC.h"
 #import "AddEventTVC.h"
+#import "DetailEventTVC.h"
 #import "Event.h"
 
 @interface DayTVC ()
@@ -73,13 +74,11 @@ NSMutableArray *todaysEvents; //Array of today's Events
         if (day == 1 || day == 2 || day == 3) {
             if ([scan scanString:[NSString stringWithFormat:@"%@0%d",month,day] intoString:Nil]) {
                 [today addObject:[all objectAtIndex:i]];
-                NSLog([all objectAtIndex:i]);
             }
         }
         else{
             if ([scan scanString:[NSString stringWithFormat:@"%@%d",month,day] intoString:Nil]) {
                 [today addObject:[all objectAtIndex:i]];
-                NSLog([all objectAtIndex:i]);
             }
         }
         
@@ -128,15 +127,37 @@ NSMutableArray *todaysEvents; //Array of today's Events
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"addEvent"]){
         
-        AddEventTVC *controller = (AddEventTVC *)segue.destinationViewController; //get the next view controller
-        controller.month = month; //set the next months view
-        controller.day = day; //set the next view day
-        controller.delegate = self; //allow the next view to get back to here
+        AddEventTVC *acontroller = (AddEventTVC *)segue.destinationViewController; //get the next view controller
+        acontroller.month = month; //set the next months view
+        acontroller.day = day; //set the next view day
+        acontroller.delegate = self; //allow the next view to get back to here
     }
+    
+    if([segue.identifier isEqualToString:@"detailEvent"]){
+        
+        DetailEventTVC *dcontroller = (DetailEventTVC *)segue.destinationViewController; //get the next view controller
+        dcontroller.month = month; //set the next months view
+        dcontroller.day = day; //set the next view day
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        dcontroller.eventtitle = ((Event*)todaysEvents[indexPath.row]).title;
+        dcontroller.eventtime = ((Event*)todaysEvents[indexPath.row]).time;
+        dcontroller.eventlocation = ((Event*)todaysEvents[indexPath.row]).location;
+        
+        dcontroller.delegate = self; //allow the next view to get back to here
+    }
+
 }
 
 
 - (void)theSaveButtonOnTheAddEventTVCWasTapped:(AddEventTVC *)controller
+{
+    [controller.navigationController popViewControllerAnimated:YES]; // close the delegated view or the view that came back to this view
+    [self update];
+    [self.tableView reloadData];  //reload the view table
+}
+
+- (void)theSaveButtonOnTheDetailEventTVCWasTapped:(AddEventTVC *)controller
 {
     [controller.navigationController popViewControllerAnimated:YES]; // close the delegated view or the view that came back to this view
     [self update];
@@ -193,6 +214,8 @@ NSMutableArray *todaysEvents; //Array of today's Events
         [self removeEvent:content :indexPath.row]; //remove event from the text file
         [self update];
         
+        content = [NSString stringWithContentsOfFile:[self getDataPath] encoding:NSUTF8StringEncoding error:nil];
+        [self.tableView reloadData];
         [self.tableView endUpdates];
     }   
 }
@@ -218,7 +241,10 @@ NSMutableArray *todaysEvents; //Array of today's Events
         
     }
     
-    if ([all count]>=1) {
+    if ([all count] == 0) {
+        [[NSString stringWithFormat:@""] writeToFile:[self getDataPath] atomically:YES encoding:NSUTF8StringEncoding error:nil];
+    }
+    else if ([all count]>=1) {
         [all[0] writeToFile:[self getDataPath] atomically:YES encoding:NSUTF8StringEncoding error:nil];
         NSFileHandle *fileHandle = [NSFileHandle fileHandleForWritingAtPath:[self getDataPath]];
     

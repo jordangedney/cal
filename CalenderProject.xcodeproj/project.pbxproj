@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B50C7217189DBF2300150FE4 /* DetailEventTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B50C7216189DBF2300150FE4 /* DetailEventTVC.m */; };
 		B5140F1F1898C6C800B472AF /* DayTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5140F1E1898C6C800B472AF /* DayTVC.m */; };
 		B5140F221898CC0C00B472AF /* AddEventTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5140F211898CC0C00B472AF /* AddEventTVC.m */; };
 		B557DE0B1899B8270080A1B4 /* data.txt in Resources */ = {isa = PBXBuildFile; fileRef = B557DE0A1899B8270080A1B4 /* data.txt */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B50C7215189DBF2300150FE4 /* DetailEventTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailEventTVC.h; sourceTree = "<group>"; };
+		B50C7216189DBF2300150FE4 /* DetailEventTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailEventTVC.m; sourceTree = "<group>"; };
 		B5140F1D1898C6C800B472AF /* DayTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayTVC.h; sourceTree = "<group>"; };
 		B5140F1E1898C6C800B472AF /* DayTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayTVC.m; sourceTree = "<group>"; };
 		B5140F201898CC0C00B472AF /* AddEventTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEventTVC.h; sourceTree = "<group>"; };
@@ -137,6 +140,8 @@
 				B5140F211898CC0C00B472AF /* AddEventTVC.m */,
 				B557DE0C1899FABC0080A1B4 /* Event.h */,
 				B557DE0D1899FABC0080A1B4 /* Event.m */,
+				B50C7215189DBF2300150FE4 /* DetailEventTVC.h */,
+				B50C7216189DBF2300150FE4 /* DetailEventTVC.m */,
 			);
 			path = CalenderProject;
 			sourceTree = "<group>";
@@ -273,6 +278,7 @@
 				B5140F1F1898C6C800B472AF /* DayTVC.m in Sources */,
 				B5F9963618879B00003F2E50 /* MonthViewController.m in Sources */,
 				B5F9963018879B00003F2E50 /* AppDelegate.m in Sources */,
+				B50C7217189DBF2300150FE4 /* DetailEventTVC.m in Sources */,
 				B5F9962C18879B00003F2E50 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
