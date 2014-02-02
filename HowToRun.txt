@@ -1,0 +1,15 @@
+INSTRUCTIONS FOR RUNNING THE CALENDAR APP
+This calendar app was made in xCode for the iOS. To run it you must have a Mac with a
+working copy of xCode installed.
+
+Steps to run:
+1. First navigate into the "Calendar" folder (the folder this text file was located in).
+2. From there navigate into the "CalendarProject" folder.
+3. In this folder there should be a file called "CalenderProject.xcodeproj". Double click
+   this file to open the project in Xcode.
+4. When Xcode finishes opening the project open the drop down menu labeled "Product" and
+   hover over "Destination", then click "iPhone Retina (4-inch)". 
+5. Lastly click the play button "Build and Run" in the upper left hand corner. If you
+   don't see the play button, you can alternatively open the drop down menu labeled
+    "Product" and "Build" it, then "Run" it.
+6. If all goes well this will open the app in an iOS simulator on screen.

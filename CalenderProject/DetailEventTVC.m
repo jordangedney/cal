@@ -94,7 +94,7 @@
                 [all addObject:[NSString stringWithFormat:@"%@0%d;%@;%@;%@\n",month, day, timeString, titletext.text, locationtext.text]];
             }
             else{
-                [all addObject:[NSString stringWithFormat:@"%@0%d;%@;%@;%@\n",month, day, timeString, titletext.text, locationtext.text]];
+                [all addObject:[NSString stringWithFormat:@"%@%d;%@;%@;%@\n",month, day, timeString, titletext.text, locationtext.text]];
             }
         }
         
